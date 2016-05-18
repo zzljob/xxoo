@@ -16,8 +16,8 @@ from leancloud import LeanCloudError
 import xxxiao
 
 
-APP_ID = "5o0TpmUu18wHbc43boVcYccx-gzGzoHsz"
-APP_KEY = "M0hg5yOIa5AhRTS8TRXw5NMH"
+APP_ID = "APP_ID"
+APP_KEY = "APP_KEY"
 leancloud.init(APP_ID, APP_KEY)
 
 def saveImage(url) :
