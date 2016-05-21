@@ -5,16 +5,26 @@ from leancloud import LeanEngineError
 
 from app import app
 
+import xxxiao
+
 
 engine = Engine(app)
 
 
 @engine.define
 def hello(**params):
+	print params
     if 'name' in params:
         return 'Hello, {}!'.format(params['name'])
     else:
         return 'Hello, LeanCloud!'
+
+
+@engine.define
+def fetchImageFromXxxiao(**params):
+	page = xxxiao.fetchImageSeriesByPageNum(1)
+	print page
+	return 'OK'
 
 
 @engine.before_save('Todo')
