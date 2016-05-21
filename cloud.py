@@ -13,7 +13,6 @@ engine = Engine(app)
 
 @engine.define
 def hello(**params):
-	print params
     if 'name' in params:
         return 'Hello, {}!'.format(params['name'])
     else:
@@ -22,8 +21,7 @@ def hello(**params):
 
 @engine.define
 def fetchImageFromXxxiao(**params):
-	page = xxxiao.fetchImageSeriesByPageNum(1)
-	print page
+	print xxxiao.fetchImageSeriesByPageNum(1)
 	return 'OK'
 
 
