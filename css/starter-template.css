@@ -12,32 +12,12 @@ p, body, h2, input, select, textarea {
 }
 
 .navbar .navbar-header .navbar-brand {
-	padding-top: 0px;
-	padding-bottom: 0px;
+	
 }
 
 .starter-template {
 	padding: 40px 0px;
 	text-align: center;
-}
-
-.leaf-main-content-wrap {
-	background: #fff
-}
-
-.leaf-main-content-wrap .leaf-main-content {
-	min-height: 600px;
-	overflow: hidden
-}
-
-.leaf-main-content-wrap .leaf-header-container {
-	width: 980px;
-	margin-right: auto;
-	margin-left: auto
-}
-
-#site-container>.leaf-header-container:first-child {
-	margin-top: 20px
 }
 
 .aws-section {
@@ -315,6 +295,16 @@ p, body, h2, input, select, textarea {
     color: #b2c8db;
     margin: 0 5px;
     padding: 10px 0;
+}
+.index-list .result {
+    margin: 0 20px;
+    padding: 10px 0;
+}
+.index-list .loading {
+	color: #b2c8db;
+}
+.index-list .empty{
+	color: #ddd;
 }
 
 .index-list {
