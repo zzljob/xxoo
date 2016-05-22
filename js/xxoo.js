@@ -13,7 +13,7 @@ $(function () {
 	console.log("request json data");
 	$.ajax({
 		type:"get",
-		url:"./data/images.json",
+		url:"http://zzljob.github.io/xxoo/data/images.json",
 		async:true,
 		dataType:"json",
 		error: function(jqXHR, textStatus, errorThrown) {
@@ -33,7 +33,8 @@ $(function () {
 			console.log("ajax request success, data=%s, textStatus=%s", data, textStatus);
 			console.log("clear old plugthumb html");
 			$(".index-list .plugthumb").remove();
-			if(data && data.lenght > 0){
+			console.log("data.length <= 0 is %s", data.length <= 0);
+			if(data && data.length <= 0){
 				console.log("request data is empty, show no data.");
 				$(".index-list .result")
 					.removeClass("loading")
@@ -42,9 +43,9 @@ $(function () {
 					.show()
 					;
 			} else {
-				console.log("request data has item=%s, show data.", data.lenght);
+				console.log("request data has item=%s, show data.", data.length);
 				$(".index-list .result").hide();
-				for (var i = 0; i < data.lenght; i++) {
+				for (var i = 0; i < data.length; i++) {
 					var node = $("#temp_plugthumb").clone();
 					node.find("img.lazy")
 						.attr("src", data[i].img)
@@ -53,8 +54,8 @@ $(function () {
 						.end()
 						.find(".plug-title > a")
 						.attr("href", data[i].href)
-						.attr("title", data[i].img)
-						.text(data[i].img)
+						.attr("title", data[i].title)
+						.text(data[i].title)
 						.end()
 						.find(".plug-description")
 						.remove()

@@ -1,10 +1,123 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-	</head>
-	<body>
-		
-	</body>
+<html lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <meta name="keywords" content="xxoo图片,jquery图片放大">
+    <meta name="description" content="xxoo图片">
+    <meta name="author" content="xxoo">
+    
+	<title>xxoo</title>
+	
+    <link rel="shortcut icon" href="./img/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="./img/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/ico/apple-touch-icon-72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/ico/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/ico/apple-touch-icon-144.png">
+	
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	
+    <!-- Custom styles for this template -->
+    <link href="./css/starter-template.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="http://www.htmleaf.com/templets/default/css/common.css">--> 
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="./js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="logo" class="navbar-brand" href="#">
+			xxoo
+		  </a>
+        </div>
+        <!--
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>--><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    <div style="display: none;">
+    	<div id="temp_plugthumb" class="plugthumb">
+          <div class="tp">
+              <img class="lazy" src="./img/201601201844.jpg" data-original="./img/201601201844.jpg" width="250" height="158" alt="alt" style="display: block;">
+          </div>
+          <div class="plug-info">
+              <div class="plug-title">
+                <a href="#" title="#">switchPage.js-简单的jQuery全屏滚动翻页插件</a>
+              </div>
+              <div class="plug-description" style="display: none;">
+                switchPage.js是一款小巧的jQuery全屏滚动翻页插件。通过它可以快速创建水平或垂直的全屏滚动翻页效果。该插件支持使用鼠标或键盘来进行翻页。
+              </div>
+          </div>
+          <div class="plug-mesg">
+              <ul>
+                <li>
+                	<a href="#">
+                		<img src="./img/jquery-32.png" width="24" height="24" alt="jQuery插件">
+                	</a>
+                </li>
+              </ul>
+              <span class="pull-right">2016-05-21</span>
+          </div>
+        </div>
+    </div>
+
+	<div class="container">
+	    <section id="aws" class="aws-section" style="display: none;">
+	      <div class="header-container">
+	        <div class="bg-animation">
+	          <img alt="Cloud-1" class="cloud cloud-1" src="http://www.htmleaf.com/templets/default/picture/cloud-1.png" width="300" />
+	          <img alt="Cloud-2" class="cloud cloud-2" src="http://www.htmleaf.com/templets/default/picture/cloud-2.png" width="347" />
+	          <img alt="corel" class="cloud corel" src="http://www.htmleaf.com/templets/default/picture/corel.png" width="50">
+	          <img alt="Cloud-3" class="cloud cloud-3" src="http://www.htmleaf.com/templets/default/picture/cloud-3.png" width="470" />
+	          <img alt="Cloud-4" class="cloud cloud-4" src="http://www.htmleaf.com/templets/default/picture/cloud-4.png" width="762" />
+	          <img alt="Cloud-5" class="cloud cloud-5" src="http://www.htmleaf.com/templets/default/picture/cloud-5.png" width="587" />
+	          <img alt="Cloud-6" class="cloud cloud-6" src="http://www.htmleaf.com/templets/default/picture/cloud-6.png" width="857" />
+	        </div>
+	        <div class="header-content">
+	          <h2>XXOO之家<br> ss</h2>
+	        </div>
+	      </div>
+	    </section>
+    
+        <div class="index-title">
+           <h2 class="letterpress">最新图片</h2>
+        </div>
+        <div class="index-list">
+	       <div class="result loading">正在加载...</div> 
+        </div>
+    </div>
+
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./js/xxoo.js"></script>
+</body>
 </html>
