@@ -7,6 +7,8 @@ sys.setdefaultencoding("utf-8")
 
 import os
 import requests
+import time
+import json
 
 import leancloud
 from leancloud import Object
@@ -48,16 +50,18 @@ def saveToLocal(item, dir = 'xxxiao'):
 ####开端
 
 page = xxxiao.fetchImageSeriesByPageNum(1)
+page_content = []
 for index, each in enumerate(page['list']):
-	saveToLocal(each, 'xxxiao/%d' % (page['page']))
+	node = page['list'][index];
+	date = time.strftime('%Y-%m-%d',time.localtime(time.time()));
+	href = "#";
+	page_content.append({"img":node['cover'],"title":node["title"],"href":href,"author":"auto","date":date});
 
-while(page != None and page['previous'] != None and page['page'] > 0 and page['page'] < 50):
-	page = xxxiao.fetchImageSeriesByUrl(page['previous'])
-	if page == None:
-		break
-		
-	for index, each in enumerate(page['list']):
-		saveToLocal(each, 'xxxiao/%d' % (page['page']))
+with open("./images.json", 'wb') as json_file:
+	json_file.write(json.dumps(page_content))
+	
+
+
 	
 
 	
