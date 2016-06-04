@@ -13,7 +13,7 @@ $(function () {
 	console.log("request json data");
 	$.ajax({
 		type:"get",
-		url:"http://zzljob.github.io/xxoo/data/images.json",
+		url:"../data/images.json",
 		async:true,
 		dataType:"json",
 		error: function(jqXHR, textStatus, errorThrown) {
@@ -64,11 +64,11 @@ $(function () {
 						.text(data[i].date)
 						.end()
 						;
-						
-					$(".index-list").append(node);	
+
+					$(".index-list").append(node);
 				}
 			}
 		}
 	});
-	
+
 });
